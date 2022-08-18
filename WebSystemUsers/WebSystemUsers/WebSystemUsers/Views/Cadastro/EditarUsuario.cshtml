@@ -1,0 +1,58 @@
+﻿@model WebSystemUsers.Models.UsuarioModel
+@{
+    ViewBag.Title = "Cadastro Usuarios";
+}
+
+
+
+
+<h2>Cadastro de Usuários</h2>
+
+<h2>Novo Cadastro de Usuários</h2>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Lista de Usuários</h5>
+                </div>
+                <div class="ibox-content">
+
+                    @using (Html.BeginForm("EditarUsuario", "Cadastro"))
+                    {
+                        <div class="row">
+                            <div class="col-lg-6">
+                                @Html.LabelFor(obj => obj.nome)
+                                @Html.TextBoxFor(obj => obj.nome, new { @class = "form-control" })
+                            </div>
+                            <div class="col-lg-6">
+                                @Html.LabelFor(obj => obj.email)
+                                @Html.TextBoxFor(obj => obj.email, new { @class = "form-control" })
+                            </div>
+
+                            <div class="col-lg-3">
+                                @Html.LabelFor(obj => obj.senha)
+                                @Html.TextBoxFor(obj => obj.senha, new { @class = "form-control"})
+                            </div>
+
+
+                        </div>
+                        <div class="col-lg-3">
+                            <label for='tiposid' class="control-label">Tipo de usuario</label>
+                            @Html.DropDownList("tiposid", null, "Selecione", new { @class = "form-control" })
+                        </div>
+                        <div class="col-lg-3">
+                            <label for='status' class="control-label">Selecione Status</label>
+                            @Html.DropDownList("status", null, "Selecione", new { @class = "form-control" })
+                        </div>
+                        <div>
+                            <input type="submit" value="Salvar" class="btn btn-warning" />
+
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
