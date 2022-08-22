@@ -10,7 +10,10 @@ namespace WebSystemUsers.Controllers
     {
         public IActionResult Dashboard_1()
         {
-            return View();
+           
+            
+         return View();
+            
         }
 
         public IActionResult Dashboard_2()

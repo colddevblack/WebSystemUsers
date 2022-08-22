@@ -45,7 +45,7 @@ namespace WebSystemUsers
             }
             else
             {
-                app.UseExceptionHandler("/Dashboards/Dashboard_1");
+                app.UseExceptionHandler("/Login/Index");
                 app.UseHsts();
             }
 
@@ -60,7 +60,7 @@ namespace WebSystemUsers
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute("default", "{controller=Dashboards}/{action=Dashboard_1}/{id?}");
+                endpoints.MapControllerRoute("default", "{controller=Login}/{action=Index}/{id?}");
             });
         }
     }

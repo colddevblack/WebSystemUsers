@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using WebSystemUsers.Connection;
 using WebSystemUsers.Models;
@@ -17,6 +19,7 @@ namespace WebSystemUsers.Controllers
             db = conect;
         }
 
+        
         public ActionResult ConsultaUsuario()
 
         {
@@ -25,6 +28,7 @@ namespace WebSystemUsers.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "root,admin")]
         public ActionResult CadastroUsuario()
         {
             ViewBag.tiposid = new SelectList(db.tipodb.ToList(), "id", "nomeTipo");
@@ -32,6 +36,7 @@ namespace WebSystemUsers.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "root,admin")]
         public ActionResult CadastroUsuario(UsuarioModel usuariomodref)
         {
             usuariomodref.status = "Ativo";
@@ -41,6 +46,7 @@ namespace WebSystemUsers.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "root,admin")]
         public ActionResult EditarUsuario(int id)
         {
 
@@ -63,6 +69,7 @@ namespace WebSystemUsers.Controllers
 
 
         [HttpPost]
+        [Authorize(Roles = "root,admin")]
         public ActionResult EditarUsuario(UsuarioModel user)
         {
             if (user.status == "0")
@@ -79,7 +86,8 @@ namespace WebSystemUsers.Controllers
             return RedirectToAction("ConsultaUsuario");
         }
 
-
+        [HttpDelete]
+        [Authorize(Roles = "root")]
         public ActionResult DeletarUsuario(int Id)
         {
             var user = db.userdb.Find(Id);
@@ -88,21 +96,7 @@ namespace WebSystemUsers.Controllers
             return RedirectToAction("ConsultaUsuario");
         }
 
-        //[HttpGet]
-        //public ActionResult _BuscasUsuario(int? idcliente, string idcpf, DateTime? dataNasc)
-        //{
-        //    {
-        //        // consulta linq
-        //        List<UsuarioModel> usuarios = (from u in db.userdb
-        //                                      where (idcliente != null ? u.id == idcliente : 0 == 0)
-        //                                      && (idcpf != null ? u.cpf == idcpf : 0 == 0)
-        //                                      && (dataNasc != null ? u.dataNascimento == dataNasc : 0 == 0)
-        //                                      select u
-        //                       ).ToList();
-
-        //        return PartialView(usuarios);
-        //    }
-        //}
+        
     }
 }
 

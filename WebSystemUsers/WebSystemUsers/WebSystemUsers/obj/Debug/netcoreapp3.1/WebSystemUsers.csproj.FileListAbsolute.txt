@@ -286,3 +286,4 @@ C:\Users\Cold\Desktop\DOTNET\WebSystemUsers\WebSystemUsers\WebSystemUsers\WebSys
 C:\Users\Cold\Desktop\DOTNET\WebSystemUsers\WebSystemUsers\WebSystemUsers\WebSystemUsers\obj\Debug\netcoreapp3.1\Razor\Views\Tipo\CadastroTipo.cshtml.g.cs
 C:\Users\Cold\Desktop\DOTNET\WebSystemUsers\WebSystemUsers\WebSystemUsers\WebSystemUsers\obj\Debug\netcoreapp3.1\Razor\Views\Tipo\ConsultaTipo.cshtml.g.cs
 C:\Users\Cold\Desktop\DOTNET\WebSystemUsers\WebSystemUsers\WebSystemUsers\WebSystemUsers\obj\Debug\netcoreapp3.1\Razor\Views\Cadastro\EditarUsuario.cshtml.g.cs
+C:\Users\Cold\Desktop\DOTNET\WebSystemUsers\WebSystemUsers\WebSystemUsers\WebSystemUsers\obj\Debug\netcoreapp3.1\Razor\Views\Login\Index.cshtml.g.cs
